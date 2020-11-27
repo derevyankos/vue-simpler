@@ -9,11 +9,11 @@ const parseDirectory = (path, options = {}) => {
   let imports;
 
   if (options.format === 'list') {
-    imports = files.map((f) => `\t${f.name}: '${f.importPath}'`)
+    imports = files.map((f) => `\t'${f.name}': '${f.importPath}'`)
   } else if (options.format === 'lazy') {
-    imports = files.map((f) => `\t${f.name}: () => import('${f.importPath}')`)
+    imports = files.map((f) => `\t'${f.name}': () => import('${f.importPath}')`)
   } else {
-    imports = files.map((f) => `\t${f.name}: import('${f.importPath}')`)
+    imports = files.map((f) => `\t'${f.name}': import('${f.importPath}')`)
   }
 
   return { imports }
