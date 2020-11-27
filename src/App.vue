@@ -1,9 +1,9 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Hello Vue 3.0 + Vite" />
-  <s-svg-sprite/>
-  <h2>Bla Bla car</h2>
-  <s-svg-link class="xs primary" icon="car"/>
+  <s-radio-fld v-model:rad="rad" val="first">First Value</s-radio-fld>
+  <s-radio-fld v-model:rad="rad" val="second">Second</s-radio-fld>
+  <h2>{{ rad }} || {{ rad2 }}</h2>
 </template>
 
 <script>
@@ -13,6 +13,19 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+
+  data(){
+    return {
+      rad: 'first',
+      rad2: 'second'
+    }
+  },
+
+  watch: {
+    rad(v) {
+      console.log( 'watch', v)
+    }
   },
 }
 </script>

@@ -2,6 +2,7 @@ const views = {
   's-btn': () => import('./views/btn/btn.vue'),
   's-svg-sprite': () => import('./views/svg/sprite.vue'),
   's-svg-link': () => import('./views/svg/link.vue'),
+  's-radio-fld': () => import('./views/radio/radio-fld.vue'),
 }
 
 const install = (app, defineAsyncComponent, options) => {
