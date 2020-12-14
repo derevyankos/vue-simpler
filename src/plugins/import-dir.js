@@ -39,7 +39,6 @@ module.exports = function(path, options = {}) {
     },
   ]
 
-console.log(moduleContent);
   const rollupInputOptions = {
     plugins: [virtual({ [modName]: moduleContent })],
   }

@@ -1,13 +1,14 @@
 {
   "name": "vue-simpler",
-  "version": "0.0.212",
+  "version": "0.0.213",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
   },
   "dependencies": {
     "@rollup/plugin-virtual": "^2.0.3",
-    "vue": "^3.0.2"
+    "vue": "^3.0.2",
+    "vue-router": "^4.0.1"
   },
   "devDependencies": {
     "@vue/compiler-sfc": "^3.0.2",

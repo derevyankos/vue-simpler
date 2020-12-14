@@ -1,12 +1,17 @@
-import { createApp, defineAsyncComponent } from 'vue'
+import { createApp } from './ctx'
+
 import App from './App.vue'
 import packs from './packs/index.js'
+import routes from './router.js'
 import './index.css'
-import svgIcons from 'dir:src.assets.svg'
 
 const app = createApp(App)
-packs.install(app, defineAsyncComponent, {
-  ['$svgIcons']: svgIcons
+packs.install(app, {
+  gmap: {
+    key: 'AIzaSyCgwlJlQ8FxlG0IgJVzav4yuS9NVi7CFxU'
+  }
 })
+app.use(routes)
+
 
 app.mount('#app')

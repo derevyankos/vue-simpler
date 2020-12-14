@@ -1,19 +1,18 @@
 const views = {
   's-btn': () => import('./views/btn/btn.vue'),
-  's-svg-sprite': () => import('./views/svg/sprite.vue'),
-  's-svg-link': () => import('./views/svg/link.vue'),
   's-radio-fld': () => import('./views/radio/radio-fld.vue'),
+
+  's-gmap': ()=> import('./gmap/gmap.vue')
 }
 
-const install = (app, defineAsyncComponent, options) => {
+
+const install = (app, options) => {
+  const { defineAsyncComponent } = process.$ctx
   Object.entries(views).map(([name, promise]) => {
     app.component(name, defineAsyncComponent(promise))
-    if (options[name]) {
-      app.config.globalProperties.$custom = options[name]
-    }
-
-    Object.assign(app.config.globalProperties, options)
   })
+
+  process.$conf = options
 }
 
 export default {

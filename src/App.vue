@@ -1,9 +1,10 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
-  <s-radio-fld v-model:rad="rad" val="first">First Value</s-radio-fld>
-  <s-radio-fld v-model:rad="rad" val="second">Second</s-radio-fld>
-  <h2>{{ rad }} || {{ rad2 }}</h2>
+  <router-link to="/">Hello world</router-link>
+  <router-link to="/gmap">Goole Maps</router-link>
+  <div id="content">
+    <router-view />
+  </div>
 </template>
 
 <script>
